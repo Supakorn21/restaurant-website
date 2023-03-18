@@ -173,6 +173,7 @@
 }
 #food-preview h2 {
   text-align: center;
+  margin-bottom: 3rem;
 }
 #food-preview .button-rounded {
   background-color: #ed4852;
@@ -182,16 +183,48 @@
   border-radius: 30px;
   margin-bottom: 100px;
 }
-#food-preview .food-slider {
+#food-preview .container {
   width: 100%;
   max-width: 1400px;
+  position: relative;
+}
+#food-preview .container .left-btn,
+#food-preview .container .right-btn {
+  background: red;
+  color: white;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: calc(50% - 25px);
   display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  cursor: pointer;
+}
+#food-preview .container .left-btn {
+  left: -35px;
+}
+#food-preview .container .right-btn {
+  right: -35px;
+}
+#food-preview .food-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  font-size: 0;
+}
+#food-preview .food-slider .sliding-system {
+  white-space: nowrap;
+  transform: translate3d(0%, 0, 0);
 }
 #food-preview .food-slider .slide {
   width: 20%;
   position: relative;
   height: 500px;
   cursor: pointer;
+  display: inline-block;
+  white-space: normal;
 }
 #food-preview .food-slider .slide:hover .background {
   background: rgb(245, 156, 46);
@@ -238,6 +271,10 @@
 #food-preview .food-slider .slide img {
   width: 95%;
   max-width: 250px;
+}
+
+.food-slider::-webkit-scrollbar {
+  display: none;
 }
 
 h2 {
