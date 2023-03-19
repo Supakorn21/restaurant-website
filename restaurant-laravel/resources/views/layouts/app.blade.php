@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link>
-        <link href="/css/app.css" rel="stylesheet">
+        <link href="/scss/app.scss" rel="stylesheet">
         <link>
          <link
       rel="stylesheet"
@@ -29,10 +29,10 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
-         @vite(['resources/css/app.css', 'resources/js/app.js'])
+         @vite(['resources/scss/app.scss', 'resources/js/app.js'])
     </head>
     <body class="antialiased">
-        <section id="welcome">
+        <section id="app-layout">
     
             @include('includes.side-menu')
         @yield('content')
