@@ -1,4 +1,17 @@
 .welcome-jumbo {
+    transform: translate3d(300px, 0, 0);
+    padding: 100px;
+    flex-direction: column;
+    max-width: calc(100vw - 300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(237, 72, 82);
+    background: radial-gradient(
+        circle,
+        rgba(237, 72, 82, 1) 0%,
+        rgba(156, 27, 36, 1) 100%
+    );
     .status {
         display: inline-block;
         padding: 10px 20px;
@@ -20,18 +33,7 @@
             height: auto;
         }
     }
-    padding: 100px;
-    flex-direction: column;
-    max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(237, 72, 82);
-    background: radial-gradient(
-        circle,
-        rgba(237, 72, 82, 1) 0%,
-        rgba(156, 27, 36, 1) 100%
-    );
+
     h1 {
         font-size: 4rem;
         font-weight: 900;
@@ -48,4 +50,25 @@
     //     bottom: 30px;
     //   }
     // }
+}
+
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
 }
