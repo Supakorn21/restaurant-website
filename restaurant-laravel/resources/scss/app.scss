@@ -2,6 +2,7 @@
 @import "bootstrap.min.css";
 @import "home";
 @import "pages/about";
+@import "pages/waitlist";
 
 * {
     margin: 0;
@@ -482,6 +483,12 @@ h2 {
             transform: translate3d(0, 0, 0);
         }
     }
+}
+
+.content-box {
+    background: white;
+    padding: 20px;
+    height: 100%;
 }
 
 // Large devices (desktops, 992px and up)

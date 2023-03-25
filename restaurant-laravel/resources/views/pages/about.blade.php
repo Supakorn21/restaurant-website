@@ -3,7 +3,7 @@
 @section('title', 'Page title')
 
 @section('content')
-    <div class="about-page">
+    <div id="about-page">
         <div class="content-box">
             <div class="row">
                 <div class="col-md-6">
