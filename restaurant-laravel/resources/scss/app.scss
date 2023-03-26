@@ -4,6 +4,7 @@
 @import "pages/about";
 @import "pages/waitlist";
 @import "pages/offers";
+@import "menu/index";
 
 * {
     margin: 0;
@@ -59,6 +60,7 @@ a {
             }
 
             ul.links {
+                padding-left: 0rem;
                 li {
                     a {
                         font-size: 1.1rem;
@@ -115,8 +117,9 @@ a {
         transform: translate3d(300px, 0, 0);
         max-width: calc(100vw - 300px) !important;
         flex-direction: column;
-        padding: 50px;
+        padding: 80px;
         height: 100%;
+        overflow: scroll;
         background: rgb(237, 72, 82);
         background: radial-gradient(
             circle,
@@ -258,7 +261,7 @@ a {
             &:hover {
                 .background {
                     background: rgb(245, 156, 46);
-                    transform: translate3d((0, -50px, 0));
+                    transform: translate3d((0, -35%, 0));
                 }
                 .content {
                     .food-title {
