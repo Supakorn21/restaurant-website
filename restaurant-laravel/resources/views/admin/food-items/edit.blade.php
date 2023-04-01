@@ -7,15 +7,15 @@
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="page-header">
-                    <h2 class="pageheader-title">Edit Food Category </h2>
+                    <h2 class="pageheader-title">Edit Food Item </h2>
                     <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet
                         vestibulum mi. Morbi lobortis pulvinar quam.</p>
                     <div class="page-breadcrumb">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="/admin" class="breadcrumb-link">Dashboard</a></li>
-                                <li class="breadcrumb-item"><a href="/admin/food-categories" class="breadcrumb-link"> Food Categories</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Edit Food Category</li>
+                                <li class="breadcrumb-item"><a href="/admin/food-items" class="breadcrumb-link">All Food Items</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Edit Food Item</li>
                             </ol>
                         </nav>
                     </div>
@@ -24,17 +24,22 @@
         </div>
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
             <div class="card">
-                <h5 class="card-header">Edit Food category</h5>
+                <h5 class="card-header">Edit a new Item</h5>
                 <div class="card-body">
                     <form action="#" id="basicform" data-parsley-validate="" novalidate="">
                         <div class="form-group">
-                            <label for="inputCategory">Category Name</label>
-                            <input id="inputCategory" type="text" name="category" data-parsley-trigger="change"
-                                required="" placeholder="Enter category name" autocomplete="off" class="form-control">
+                            <label for="inputItem">Item Name</label>
+                            <input id="inputItem" type="text" name="title" data-parsley-trigger="change"
+                                required="" placeholder="Enter Item name" autocomplete="off" class="form-control">
+                        </div>
+                          <div class="form-group">
+                            <label for="inputItem">Price</label>
+                            <input id="inputItem" type="text" name="price" data-parsley-trigger="change"
+                                required="" placeholder="Enter Item price" autocomplete="off" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="inputCategoryImageUrl">Category Image Url</label>
-                            <input id="inputCategoryImageUrl" type="text" name="image_url" data-parsley-trigger="change"
+                            <label for="inputItemImageUrl">Item Image Url</label>
+                            <input id="inputItemImageUrl" type="text" name="image_url" data-parsley-trigger="change"
                                 required="" placeholder="http://www.billys.com/images/desserts.png" autocomplete="off" class="form-control">
                         </div>
                 

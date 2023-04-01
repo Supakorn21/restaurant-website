@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\FoodCategoriesController;
 use App\Http\Controllers\admin\AdminController;
+use App\Http\Controllers\admin\FoodItemsController;
 use App\Http\Controllers\StaticPagesController;
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,12 @@ Route::get('/admin', [AdminController::class, 'dashboard']);
 Route::get('/admin/food-categories', [FoodCategoriesController::class, 'index']);
 Route::get('/admin/food-categories/create', [FoodCategoriesController::class, 'create']);
 Route::get('/admin/food-categories/{id}/edit', [FoodCategoriesController::class, 'edit']);
+
+
+// Admin Food Items
+Route::get('/admin/food-items', [FoodItemsController::class, 'index']);
+Route::get('/admin/food-items/create', [FoodItemsController::class, 'create']);
+Route::get('/admin/food-items/{id}/edit', [FoodItemsController::class, 'edit']);
 
 // Admin Authentication
 Route::get('/admin/register', function () {
