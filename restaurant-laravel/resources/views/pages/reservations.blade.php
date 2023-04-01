@@ -9,6 +9,18 @@
                 <div class="col-md-6">
                     <h1>Get on the list</h1>
                     <form>
+                             <div class="form-group mb-3">
+                            <label for="fnameInput">First Name</label>
+                            <input type="text" class="form-control" name="fname"
+                            id="fnameInput"
+                                placeholder="Billy">
+                        </div>
+                             <div class="form-group mb-3">
+                            <label for="lnameInput">Last Name</label>
+                            <input type="text" class="form-control" name="lname"
+                            id="lnameInput"
+                                placeholder="Ray">
+                        </div>
                         <div class="form-group mb-3">
                             <label for="emailInput">Email address</label>
                             <input type="email" class="form-control" id="emailInput" name="email"
