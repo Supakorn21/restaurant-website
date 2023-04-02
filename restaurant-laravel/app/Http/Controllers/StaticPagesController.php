@@ -8,7 +8,7 @@ class StaticPagesController extends Controller
 {
     public function home()
     {
-        return view('landing-page');
+        return view('home');
     }
     public function about()
     {
