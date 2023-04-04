@@ -51,6 +51,7 @@ Route::get('/admin/users', [UsersController::class, 'index']);
 Route::get('/admin/users/create', [UsersController::class, 'create']);
 Route::get('/admin/users/{id}/edit', [UsersController::class, 'edit']);
 Route::post('/admin/users', [UsersController::class, 'store']);
+Route::put('/admin/users/{id}', [UsersController::class, 'update']);
 
 // Admin Authentication
 Route::get('/admin/register', function () {
