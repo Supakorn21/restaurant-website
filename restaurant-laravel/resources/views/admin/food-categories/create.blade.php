@@ -26,16 +26,41 @@
             <div class="card">
                 <h5 class="card-header">Create a new category</h5>
                 <div class="card-body">
-                    <form action="#" id="basicform" data-parsley-validate="" novalidate="">
+                    <form method="POST" action="/admin/food-categories">
+                        @csrf
                         <div class="form-group">
                             <label for="inputCategory">Category Name</label>
-                            <input id="inputCategory" type="text" name="category" data-parsley-trigger="change"
-                                required="" placeholder="Enter category name" autocomplete="off" class="form-control">
+                            
+                                 <input id="inputCategory" type="text"
+                                class="form-control form-control-lg @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}"
+                                placeholder="Enter category name"  required autocomplete="name" autofocus>
+                            @error('title')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDescription">Description</label>
+                                 <textarea id="inputDescription" type="text" value="{{ old('description') }}"
+                                class="form-control form-control-lg @error('description') is-invalid @enderror" name="description"
+                                placeholder="Enter category description"  required autocomplete="name" autofocus> </textarea>
+                            @error('description')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="inputCategoryImageUrl">Category Image Url</label>
-                            <input id="inputCategoryImageUrl" type="text" name="image_url" data-parsley-trigger="change"
-                                required="" placeholder="http://www.billys.com/images/desserts.png" autocomplete="off" class="form-control">
+                                <input id="inputCategoryImageUrl" type="text"
+                                class="form-control form-control-lg @error('image_url') is-invalid @enderror" name="image_url" value="{{ old('image_url') }}"
+                                placeholder="http://www.billys.com/images/desserts.png"  required autocomplete="name" autofocus>
+                            @error('image_url')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                 
                         <div class="row">

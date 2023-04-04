@@ -30,16 +30,24 @@ Route::get('/contact', [StaticPagesController::class, 'contact']);
 
 // Admin Dashboard
 Route::get('/admin', [AdminController::class, 'dashboard']);
+
+
 // Admin Food Categories
 Route::get('/admin/food-categories', [FoodCategoriesController::class, 'index']);
 Route::get('/admin/food-categories/create', [FoodCategoriesController::class, 'create']);
 Route::get('/admin/food-categories/{id}/edit', [FoodCategoriesController::class, 'edit']);
+Route::post('/admin/food-categories', [FoodCategoriesController::class, 'store']);
+// use POST but method PUT on the edit page
+Route::put('/admin/food-categories/{id}', [FoodCategoriesController::class, 'update']);
+// post or get for delete
+Route::delete('/admin/food-categories/{id}/delete', [FoodCategoriesController::class, 'delete']);
 
 
 // Admin Food Items
 Route::get('/admin/food-items', [FoodItemsController::class, 'index']);
 Route::get('/admin/food-items/create', [FoodItemsController::class, 'create']);
 Route::get('/admin/food-items/{id}/edit', [FoodItemsController::class, 'edit']);
+
 
 
 // Admin Customers
