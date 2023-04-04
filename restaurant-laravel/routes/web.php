@@ -50,6 +50,7 @@ Route::get('/admin/reservations', [CustomersController::class, 'allReservations'
 Route::get('/admin/users', [UsersController::class, 'index']);
 Route::get('/admin/users/create', [UsersController::class, 'create']);
 Route::get('/admin/users/{id}/edit', [UsersController::class, 'edit']);
+Route::post('/admin/users', [UsersController::class, 'store']);
 
 // Admin Authentication
 Route::get('/admin/register', function () {
