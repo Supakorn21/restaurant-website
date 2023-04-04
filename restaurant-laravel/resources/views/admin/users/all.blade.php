@@ -42,6 +42,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">ID</th>
+                                    <th scope="col">Name</th>
                                     <th scope="col">Email</th>
                                     <th scope="col">Date Created</th>
                                     <th scope="col">Edit</th>
@@ -49,17 +50,24 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>example@email.com</td>
-                                    <td>2/2/2023</td>
-                                    <td> <a href="/admin/users/1/edit"><i
-                                                class="fa-regular fa-pen-to-square"></i></a></td>
-                                    <td> <a href="/admin/users/1/delete" onclick="if(!confirm('Are you sure you want delete item?')) {return false;}"><i class="far fa-trash-alt "></i></a></td>
-                                </tr>
+                                @foreach ($users as $user)
+                                    <tr>
+                                        <th scope="row">{{$user->id}}</th>
+                                        <td>{{$user->fname}} {{$user->lname}}</td>
+                                        <td>{{$user->email}}</td>
+                                        <td>{{date('m/d/Y', strtotime($user->updated_at))}}</td>
+                                        <td> <a href="/admin/users/{{$user->id}}/edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                                        </td>
+                                        <td> <a href="/admin/users/{{$user->id}}/delete"
+                                                onclick="if(!confirm('Are you sure you want delete item?')) {return false;}"><i
+                                                    class="far fa-trash-alt "></i></a></td>
+                                    </tr>
+                                @endforeach
+
 
                             </tbody>
                         </table>
+                        {{ $users->links() }}
                     </div>
                 </div>
             </div>
