@@ -52,15 +52,28 @@
                             <tbody>
                                 @foreach ($users as $user)
                                     <tr>
-                                        <th scope="row">{{$user->id}}</th>
-                                        <td>{{$user->fname}} {{$user->lname}}</td>
-                                        <td>{{$user->email}}</td>
-                                        <td>{{date('m/d/Y', strtotime($user->updated_at))}}</td>
-                                        <td> <a href="/admin/users/{{$user->id}}/edit"><i class="fa-regular fa-pen-to-square"></i></a>
+                                        <th scope="row">{{ $user->id }}</th>
+                                        <td>{{ $user->fname }} {{ $user->lname }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ date('m/d/Y', strtotime($user->updated_at)) }}</td>
+                                        <td> <a href="/admin/users/{{ $user->id }}/edit"><i
+                                                    class="fa-regular fa-pen-to-square"></i></a>
                                         </td>
-                                        <td> <a href="/admin/users/{{$user->id}}/delete"
+                                        <td>
+                                            {{-- <a href="/admin/users/{{ $user->id }}/delete"
                                                 onclick="if(!confirm('Are you sure you want delete item?')) {return false;}"><i
-                                                    class="far fa-trash-alt "></i></a></td>
+                                                    class="far fa-trash-alt "></i></a> --}}
+
+                                            <a onclick="event.preventDefault(); document.getElementById('delete-user-{{ $user->id }}').submit(); "
+                                                href="#"><i class="far fa-trash-alt "></i></a>
+                                            <form id="delete-user-{{ $user->id }}"
+                                                action="/admin/users/{{ $user->id }}/delete" method="POST"
+                                                class="d-none">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
+
+                                        </td>
                                     </tr>
                                 @endforeach
 

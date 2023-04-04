@@ -51,7 +51,10 @@ Route::get('/admin/users', [UsersController::class, 'index']);
 Route::get('/admin/users/create', [UsersController::class, 'create']);
 Route::get('/admin/users/{id}/edit', [UsersController::class, 'edit']);
 Route::post('/admin/users', [UsersController::class, 'store']);
+// use POST but method PUT on the edit page
 Route::put('/admin/users/{id}', [UsersController::class, 'update']);
+// post or get for delete
+Route::delete('/admin/users/{id}/delete', [UsersController::class, 'delete']);
 
 // Admin Authentication
 Route::get('/admin/register', function () {

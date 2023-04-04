@@ -74,4 +74,12 @@ class UsersController extends Controller
         $user->roles()->sync([request('role_id')]);
         return redirect('/admin/users');
     }
+
+    public function delete($id)
+    {
+        $user = User::find($id);
+        $user->delete();
+
+        return redirect('/admin/users');
+    }
 }

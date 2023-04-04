@@ -577,7 +577,6 @@
                 <a class="dropdown-item"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                     href="{{ route('logout') }}"><i class="fas fa-power-off mr-2"></i> {{ __('Logout') }}</a>
-          
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                     @csrf
                 </form>
