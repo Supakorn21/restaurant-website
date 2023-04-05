@@ -59,9 +59,16 @@
                                         <td>{{ date('m/d/Y', strtotime($item->updated_at)) }}</td>
                                         <td> <a href="/admin/food-items/{{$item->id}}/edit"><i
                                                     class="fa-regular fa-pen-to-square"></i></a></td>
-                                        <td> <a href="/admin/food-items/{{$item->id}}/delete"
-                                                onclick="if(!confirm('Are you sure you want delete item?')) {return false;}"><i
-                                                    class="far fa-trash-alt "></i></a></td>
+                                        <td>   
+                                             <a onclick="event.preventDefault(); document.getElementById('delete-item-{{ $item->id }}').submit(); "
+                                                href="#"><i class="far fa-trash-alt "></i></a>
+                                            <form id="delete-item-{{ $item->id }}"
+                                                action="/admin/food-items/{{ $item->id }}/delete" method="POST"
+                                                class="d-none">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
+                                        </td>
                                     </tr>
                                 @endforeach
 
