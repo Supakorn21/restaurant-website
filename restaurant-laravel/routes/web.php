@@ -47,6 +47,11 @@ Route::delete('/admin/food-categories/{id}/delete', [FoodCategoriesController::c
 Route::get('/admin/food-items', [FoodItemsController::class, 'index']);
 Route::get('/admin/food-items/create', [FoodItemsController::class, 'create']);
 Route::get('/admin/food-items/{id}/edit', [FoodItemsController::class, 'edit']);
+Route::post('/admin/food-items', [FoodItemsController::class, 'store']);
+// use POST but method PUT on the edit page
+Route::put('/admin/food-items/{id}', [FoodItemsController::class, 'update']);
+// post or get for delete
+Route::delete('/admin/food-items/{id}/delete', [FoodItemsController::class, 'delete']);
 
 
 
