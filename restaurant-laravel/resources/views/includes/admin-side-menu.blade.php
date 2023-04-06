@@ -42,7 +42,8 @@
                                                   <span class="badge badge-secondary">New</span></a>
                                           </li>
                                           <li class="nav-item">
-                                              <a class="nav-link" href="/admin/food-categories/create">New Food Categories
+                                              <a class="nav-link" href="/admin/food-categories/create">New Food
+                                                  Categories
                                                   <span class="badge badge-secondary">New</span></a>
                                           </li>
                                       </ul>
@@ -77,13 +78,40 @@
                       <div id="submenu-3" class="collapse submenu" style="">
                           <ul class="nav flex-column">
                               <li class="nav-item">
-                                  <a class="nav-link" href="/admin/members">Offers Members <span
-                                          class="badge badge-secondary">New</span></a>
+                                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
+                                      data-target="#submenu-3-1" aria-controls="submenu-3-1">Offers Members</a>
+                                  <div id="submenu-3-1" class="submenu collapse " style="">
+                                      <ul class="nav flex-column">
+                                          <li class="nav-item">
+                                              <a class="nav-link" href="/admin/members">All Offers Members <span
+                                                      class="badge badge-secondary">New</span></a>
+                                          </li>
+                                          {{-- <li class="nav-item">
+                                              <a class="nav-link" href="/admin/members/create">New Members
+                                                  <span class="badge badge-secondary">New</span></a>
+                                          </li> --}}
+                                      </ul>
+                                  </div>
                               </li>
+
                               <li class="nav-item">
-                                  <a class="nav-link" href="/admin/reservations">Reservations <span
-                                          class="badge badge-secondary">New</span></a>
+                                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
+                                      data-target="#submenu-3-2" aria-controls="submenu-3-2">Reservations</a>
+                                  <div id="submenu-3-2" class="submenu collapse " style="">
+                                      <ul class="nav flex-column">
+                                          <li class="nav-item">
+                                              <a class="nav-link" href="/admin/reservations">All Reservations <span
+                                                      class="badge badge-secondary">New</span></a>
+                                          </li>
+                                          <li class="nav-item">
+                                              <a class="nav-link" href="/admin/reservations/create">New Reservations
+                                                  <span class="badge badge-secondary">New</span></a>
+                                          </li>
+                                      </ul>
+                                  </div>
                               </li>
+
+
                           </ul>
                       </div>
                   </li>
