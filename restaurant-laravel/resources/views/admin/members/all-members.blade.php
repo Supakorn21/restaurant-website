@@ -49,14 +49,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Billy Gomez</td>
-                                    <td>example@email.com</td>
-                                    <td>0925647135</td>
-                                    <td>2/2/2023</td>
+                                @foreach ($members as $member)
+                                    <tr>
+                                    <th scope="row">{{$member->id}}</th>
+                                    <td>{{$member->fname}} {{$member->lname}}</td>
+                                    <td>{{$member->email}}</td>
+                                    <td>{{$member->phone_number}}</td>
+                                    <td>{{ date('m/d/Y', strtotime($member->updated_at)) }}</td>
 
                                 </tr>
+                                @endforeach
+                                
 
                             </tbody>
                         </table>

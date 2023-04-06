@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\FoodCategory;
 use App\Models\FoodItem;
+use App\Models\Member;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -21,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesTableSeeder::class);
         $this->call(FoodCategorySeeder::class);
         $this->call(FoodItemSeeder::class);
+        $this->call(MemberSeeder::class);
     }
 }

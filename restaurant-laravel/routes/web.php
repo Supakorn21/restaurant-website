@@ -7,6 +7,8 @@ use App\Http\Controllers\admin\FoodItemsController;
 use App\Http\Controllers\admin\CustomersController;
 use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\admin\UsersController;
+use App\Http\Controllers\admin\MemberController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,7 +58,9 @@ Route::delete('/admin/food-items/{id}/delete', [FoodItemsController::class, 'del
 
 
 // Admin Customers
-Route::get('/admin/offers-members', [CustomersController::class, 'allOffersMembers']);
+// Admin members
+Route::get('/admin/members', [MemberController::class, 'index']);
+// Admin reservations
 Route::get('/admin/reservations', [CustomersController::class, 'allReservations']);
 
 // Admin Users
