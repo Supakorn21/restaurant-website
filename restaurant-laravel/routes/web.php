@@ -9,6 +9,7 @@ use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\ReservationController;
+use App\Models\Reservation;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,10 @@ Route::delete('/admin/members/{id}/delete', [MemberController::class, 'delete'])
 // Admin reservations
 Route::get('/admin/reservations', [ReservationController::class, 'index']);
 Route::get('/admin/reservations/create', [ReservationController::class, 'create']);
+Route::get('/admin/reservations/{id}/edit', [ReservationController::class, 'edit']);
+Route::post('/admin/reservations', [ReservationController::class, 'store']);
+// use POST but method PUT on the edit page
+Route::put('/admin/reservations/{id}', [ReservationController::class, 'update']);
 // post or get for delete
 Route::delete('/admin/reservations/{id}/delete', [ReservationController::class, 'delete']);
 

@@ -53,9 +53,10 @@ class ReservationController extends Controller
     {
 
         $reservation = Reservation::find($id);
-
+        $dbReservations = Reservation::all();
         return view('admin.reservations.edit', [
-            'reservation' => $reservation
+            'reservation' => $reservation,
+            'dbReservations' => $dbReservations
         ]);
     }
     public function update($id)
