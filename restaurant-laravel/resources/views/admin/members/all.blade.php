@@ -46,7 +46,7 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Phone number</th>
                                     <th scope="col">Date</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>

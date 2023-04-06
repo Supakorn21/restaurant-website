@@ -66,9 +66,12 @@ Route::delete('/admin/food-items/{id}/delete', [FoodItemsController::class, 'del
 // Admin members
 Route::get('/admin/members', [MemberController::class, 'index']);
 Route::delete('/admin/members/{id}/delete', [MemberController::class, 'delete']);
+
 // Admin reservations
 Route::get('/admin/reservations', [ReservationController::class, 'index']);
-Route::post('/admin/reservations', [ReservationController::class, 'saveReservations']);
+Route::get('/admin/reservations/create', [ReservationController::class, 'create']);
+// post or get for delete
+Route::delete('/admin/reservations/{id}/delete', [ReservationController::class, 'delete']);
 
 // Admin Users
 Route::get('/admin/users', [UsersController::class, 'index']);
