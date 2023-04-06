@@ -46,23 +46,33 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Phone number</th>
                                     <th scope="col">Date</th>
+                                    <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($members as $member)
                                     <tr>
-                                    <th scope="row">{{$member->id}}</th>
-                                    <td>{{$member->fname}} {{$member->lname}}</td>
-                                    <td>{{$member->email}}</td>
-                                    <td>{{$member->phone_number}}</td>
-                                    <td>{{ date('m/d/Y', strtotime($member->updated_at)) }}</td>
-
-                                </tr>
+                                        <th scope="row">{{ $member->id }}</th>
+                                        <td>{{ $member->fname }} {{ $member->lname }}</td>
+                                        <td>{{ $member->email }}</td>
+                                        <td>{{ $member->phone_number }}</td>
+                                        <td>{{ date('m/d/Y', strtotime($member->updated_at)) }}</td>
+                                        <td><a onclick="event.preventDefault(); document.getElementById('delete-member-{{ $member->id }}').submit(); "
+                                                href="#"><i class="far fa-trash-alt "></i></a>
+                                            <form id="delete-member-{{ $member->id }}"
+                                                action="/admin/members/{{ $member->id }}/delete" method="POST"
+                                                class="d-none">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
+                                        </td>
+                                    </tr>
                                 @endforeach
-                                
+
 
                             </tbody>
                         </table>
+                        {{ $members->links() }}
                     </div>
                 </div>
             </div>
