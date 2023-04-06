@@ -28,6 +28,8 @@ Route::get('/menu', [StaticPagesController::class, 'menu']);
 Route::get('/menu/{slug}', [StaticPagesController::class, 'singleMenu']);
 Route::get('/about', [StaticPagesController::class, 'about']);
 Route::get('/reservations', [StaticPagesController::class, 'reservations']);
+Route::post('/reservations', [StaticPagesController::class, 'saveReservation']);
+Route::get('/reservations/thank-you', [StaticPagesController::class, 'reservationThankyou']);
 Route::get('/offers', [StaticPagesController::class, 'offers']);
 Route::post('/offers', [StaticPagesController::class, 'registerMember']);
 Route::get('/offers/thank-you', [StaticPagesController::class, 'offersThankyou']);
@@ -66,6 +68,7 @@ Route::get('/admin/members', [MemberController::class, 'index']);
 Route::delete('/admin/members/{id}/delete', [MemberController::class, 'delete']);
 // Admin reservations
 Route::get('/admin/reservations', [ReservationController::class, 'index']);
+Route::post('/admin/reservations', [ReservationController::class, 'saveReservations']);
 
 // Admin Users
 Route::get('/admin/users', [UsersController::class, 'index']);

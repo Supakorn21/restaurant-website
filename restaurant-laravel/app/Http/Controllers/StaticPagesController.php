@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class StaticPagesController extends Controller
@@ -19,6 +20,31 @@ class StaticPagesController extends Controller
     {
         return view('pages.reservations');
     }
+    public function saveReservation()
+    {
+        request()->validate([
+            'fname' => ['required', 'string'],
+            'lname' => ['required', 'string'],
+            'email' => ['required', 'string'],
+            'phone_number' => ['required', 'string'],
+            'guests_total' => ['required', 'string'],
+            'time' => ['required'],
+        ]);
+        $reservation = new Reservation();
+        $reservation->fname = request('fname');
+        $reservation->lname = request('lname');
+        $reservation->email = request('email');
+        $reservation->phone_number = request('phone_number');
+        $reservation->guests_total = request('guests_total');
+        $reservation->time = request('time');
+        $reservation->save();
+
+        return redirect('/reservations/thank-you');
+    }
+    public function reservationThankyou()
+    {
+        return view('pages.thankyou-reservations');
+    }
     public function contact()
     {
         return view('pages.contact');
@@ -29,13 +55,11 @@ class StaticPagesController extends Controller
     }
     public function registerMember()
     {
-
-
         request()->validate([
             'fname' => ['required', 'string'],
             'lname' => ['required', 'string'],
             'email' => ['required', 'string'],
-            'phone_number' => ['required', 'string']
+            'phone_number' => ['required', 'string'],
         ]);
         // return request()->all();
         $member = new Member();
@@ -45,13 +69,11 @@ class StaticPagesController extends Controller
         $member->phone_number = request('phone_number');
         $member->save();
 
-
-
         return redirect('/offers/thank-you');
     }
     public function offersThankyou()
     {
-        return view('pages.thank-you');
+        return view('pages.thankyou-offers');
     }
     public function menu()
     {
