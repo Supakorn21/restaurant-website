@@ -66,8 +66,7 @@
                                                     class="fa-regular fa-pen-to-square"></i></a></td>
                                         <td>
 
-                                            <a onclick="event.preventDefault(); document.getElementById('delete-reservation-{{ $reservation->id }}').submit(); "
-                                                href="#"><i class="far fa-trash-alt "></i></a>
+                                            <a onclick=" if(confirm('Are you sure you want to delete this reservation?')) { event.preventDefault(); document.getElementById('delete-reservation-{{ $reservation->id }}').submit(); }"                                                 href="#"><i class="far fa-trash-alt "></i></a>
                                             <form id="delete-reservation-{{ $reservation->id }}"
                                                 action="/admin/reservations/{{ $reservation->id }}/delete" method="POST"
                                                 class="d-none">

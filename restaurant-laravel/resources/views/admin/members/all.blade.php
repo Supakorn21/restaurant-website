@@ -57,8 +57,7 @@
                                         <td>{{ $member->email }}</td>
                                         <td>{{ $member->phone_number }}</td>
                                         <td>{{ date('m/d/Y', strtotime($member->updated_at)) }}</td>
-                                        <td><a onclick="event.preventDefault(); document.getElementById('delete-member-{{ $member->id }}').submit(); "
-                                                href="#"><i class="far fa-trash-alt "></i></a>
+                                        <td><a onclick=" if(confirm('Are you sure you want to delete this member?')) { event.preventDefault(); document.getElementById('delete-member-{{ $member->id }}').submit(); }"                                                 href="#"><i class="far fa-trash-alt "></i></a>
                                             <form id="delete-member-{{ $member->id }}"
                                                 action="/admin/members/{{ $member->id }}/delete" method="POST"
                                                 class="d-none">

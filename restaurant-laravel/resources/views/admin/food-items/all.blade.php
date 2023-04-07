@@ -60,7 +60,7 @@
                                         <td> <a href="/admin/food-items/{{$item->id}}/edit"><i
                                                     class="fa-regular fa-pen-to-square"></i></a></td>
                                         <td>   
-                                             <a onclick="event.preventDefault(); document.getElementById('delete-item-{{ $item->id }}').submit(); "
+                                             <a onclick=" if(confirm('Are you sure you want to delete this item?')) { event.preventDefault(); document.getElementById('delete-item-{{ $item->id }}').submit(); } "
                                                 href="#"><i class="far fa-trash-alt "></i></a>
                                             <form id="delete-item-{{ $item->id }}"
                                                 action="/admin/food-items/{{ $item->id }}/delete" method="POST"

@@ -64,8 +64,7 @@
                                                 onclick="if(!confirm('Are you sure you want delete item?')) {return false;}"><i
                                                     class="far fa-trash-alt "></i></a> --}}
 
-                                            <a onclick="event.preventDefault(); document.getElementById('delete-user-{{ $user->id }}').submit(); "
-                                                href="#"><i class="far fa-trash-alt "></i></a>
+                                            <a onclick=" if(confirm('Are you sure you want to delete this user?')) { event.preventDefault(); document.getElementById('delete-user-{{ $user->id }}').submit(); }"                                                 href="#"><i class="far fa-trash-alt "></i></a>
                                             <form id="delete-user-{{ $user->id }}"
                                                 action="/admin/users/{{ $user->id }}/delete" method="POST"
                                                 class="d-none">

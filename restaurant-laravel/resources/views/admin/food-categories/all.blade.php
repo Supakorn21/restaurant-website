@@ -57,8 +57,7 @@
                                     <td> <a href="/admin/food-categories/{{$category->id}}/edit"><i
                                                 class="fa-regular fa-pen-to-square"></i></a></td>
                                     <td> 
-                                        <a onclick="event.preventDefault(); document.getElementById('delete-category-{{ $category->id }}').submit(); "
-                                                href="#"><i class="far fa-trash-alt "></i></a>
+                                      <a onclick=" if(confirm('Are you sure you want to delete this category?')) { event.preventDefault(); document.getElementById('delete-category-{{ $category->id }}').submit(); }"                                                 href="#"><i class="far fa-trash-alt "></i></a>
                                             <form id="delete-category-{{ $category->id }}"
                                                 action="/admin/food-categories/{{ $category->id }}/delete" method="POST"
                                                 class="d-none">
