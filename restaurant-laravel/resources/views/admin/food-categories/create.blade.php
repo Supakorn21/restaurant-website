@@ -55,7 +55,7 @@
                             <label for="inputCategoryImageUrl">Category Image Url</label>
                                 <input id="inputCategoryImageUrl" type="text"
                                 class="form-control form-control-lg @error('image_url') is-invalid @enderror" name="image_url" value="{{ old('image_url') }}"
-                                placeholder="http://www.billys.com/images/desserts.png"  required autocomplete="name" autofocus>
+                                placeholder="http://www.tommy.com/images/desserts.png"  required autocomplete="name" autofocus>
                             @error('image_url')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

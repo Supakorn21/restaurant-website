@@ -428,7 +428,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="/admin">Billy's</a>
+                <a class="navbar-brand" href="/admin">Tommy's</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -469,7 +469,7 @@
                                                             class="user-avatar-md rounded-circle"></div>
                                                     <div class="notification-list-user-block"><span
                                                             class="notification-list-user-name">
-                                                            Billy </span>is
+                                                            Tommy </span>is
                                                         now following you
                                                         <div class="notification-date">2 days ago</div>
                                                     </div>

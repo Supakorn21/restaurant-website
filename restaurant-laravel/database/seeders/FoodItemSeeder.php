@@ -35,7 +35,7 @@ class FoodItemSeeder extends Seeder
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('food_items')->insert([
-            'title' => 'Billys Burger',
+            'title' => 'Tommys Burger',
             'description' => 'Ground beef (or meat alternative), salt, pepper, buns, optional toppings.',
             'image_url' => '/images/desserts.png',
             'price' => 9.99,

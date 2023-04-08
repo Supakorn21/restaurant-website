@@ -9,6 +9,7 @@ use App\Http\Controllers\StaticPagesController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\ReservationController;
+use App\Http\Controllers\admin\SettingController;
 use App\Models\Reservation;
 
 /*
@@ -90,12 +91,12 @@ Route::delete('/admin/users/{id}/delete', [UsersController::class, 'delete']);
 
 
 // Admin Settings
-Route::get('/admin/settings/general', [SettingsController::class, 'general']);
-Route::post('/admin/settings/general', [SettingsController::class, 'saveGeneral']);
-Route::get('/admin/settings/seo', [SettingsController::class, 'seo']);
-Route::post('/admin/settings/seo', [SettingsController::class, 'saveSeo']);
-Route::get('/admin/settings/social', [SettingsController::class, 'social']);
-Route::post('/admin/settings/social', [SettingsController::class, 'saveSocial']);
+Route::get('/admin/settings/general', [SettingController::class, 'general']);
+Route::post('/admin/settings/general', [SettingController::class, 'saveGeneral']);
+Route::get('/admin/settings/seo', [SettingController::class, 'seo']);
+Route::post('/admin/settings/seo', [SettingController::class, 'saveSeo']);
+Route::get('/admin/settings/social', [SettingController::class, 'social']);
+Route::post('/admin/settings/social', [SettingController::class, 'saveSocial']);
 
 
 // Admin Authentication

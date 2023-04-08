@@ -75,7 +75,7 @@
                                 <div class="form-group ">
                                     <p>
                                         In signing up I acknowledge that I am 18 years of age or older, want to receive
-                                        email offers from Billys Burgers and, If I select to join Dine Rewards, agree to the
+                                        email offers from s and, If I select to join Dine Rewards, agree to the
                                         terms and conditions of the program.
                                     </p>
                                 </div>

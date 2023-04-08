@@ -83,7 +83,7 @@
                             <input id="inputItemImageUrl" type="text"
                                 class="form-control form-control-lg @error('image_url') is-invalid @enderror"
                                 name="image_url" value="{{ old('image_url', $item->image_url) }}"
-                                placeholder="http://www.billys.com/images/desserts.png" autocomplete="name" autofocus>
+                                placeholder="http://www.tommy.com/images/desserts.png" autocomplete="name" autofocus>
                             @error('image_url')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

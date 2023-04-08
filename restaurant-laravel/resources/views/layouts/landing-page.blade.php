@@ -406,7 +406,7 @@
         @include('includes.side-menu')
         <div class="welcome-jumbo">
             <div class="status">New</div>
-            <h1>Billy Burgers</h1>
+            <h1>Tommy Burgers</h1>
             <div class="burger-fries">
                 <img src="./images/main-hamburger0landing-page.png" alt="burger-fries" />
             </div>
