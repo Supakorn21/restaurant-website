@@ -19,7 +19,7 @@ class GeneralSettingSeeder extends Seeder
     {
         DB::table('general_settings')->insert([
             'site_title' => 'Tommy Burger',
-            'logo_image-url' => 'https://www.pngitem.com/pimgs/m/21-216129_restaurants-clipart-restaurant-symbol-logo-for-restaurant-png.png',
+            'logo_image_url' => 'https://www.pngitem.com/pimgs/m/21-216129_restaurants-clipart-restaurant-symbol-logo-for-restaurant-png.png',
             'address_1' => '150/312 Countrypark3 Bangsaen ',
             'address_2' => '',
             'city' => 'Chonburi',

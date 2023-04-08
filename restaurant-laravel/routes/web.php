@@ -92,11 +92,11 @@ Route::delete('/admin/users/{id}/delete', [UsersController::class, 'delete']);
 
 // Admin Settings
 Route::get('/admin/settings/general', [SettingController::class, 'general']);
-Route::post('/admin/settings/general', [SettingController::class, 'saveGeneral']);
+Route::put('/admin/settings/general', [SettingController::class, 'saveGeneral']);
 Route::get('/admin/settings/seo', [SettingController::class, 'seo']);
-Route::post('/admin/settings/seo', [SettingController::class, 'saveSeo']);
+Route::put('/admin/settings/seo', [SettingController::class, 'saveSeo']);
 Route::get('/admin/settings/social', [SettingController::class, 'social']);
-Route::post('/admin/settings/social', [SettingController::class, 'saveSocial']);
+Route::put('/admin/settings/social', [SettingController::class, 'saveSocial']);
 
 
 // Admin Authentication

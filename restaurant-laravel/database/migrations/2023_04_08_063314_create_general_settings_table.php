@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('general_settings', function (Blueprint $table) {
             $table->id();
             $table->string('site_title');
-            $table->text('logo_image-url');
+            $table->text('logo_image_url');
             $table->text('address_1');
             $table->text('address_2')->nullable();
             $table->string('city');
