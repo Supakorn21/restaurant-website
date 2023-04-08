@@ -88,6 +88,16 @@ Route::put('/admin/users/{id}', [UsersController::class, 'update']);
 // post or get for delete
 Route::delete('/admin/users/{id}/delete', [UsersController::class, 'delete']);
 
+
+// Admin Settings
+Route::get('/admin/settings/general', [SettingsController::class, 'general']);
+Route::post('/admin/settings/general', [SettingsController::class, 'saveGeneral']);
+Route::get('/admin/settings/seo', [SettingsController::class, 'seo']);
+Route::post('/admin/settings/seo', [SettingsController::class, 'saveSeo']);
+Route::get('/admin/settings/social', [SettingsController::class, 'social']);
+Route::post('/admin/settings/social', [SettingsController::class, 'saveSocial']);
+
+
 // Admin Authentication
 Route::get('/admin/register', function () {
     return view('admin/register');
