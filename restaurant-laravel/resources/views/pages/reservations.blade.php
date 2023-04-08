@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@section('title', 'Page title')
+@section('title')
+Reservations - {{$settings["general"]->site_title}} 
+@endsection
 
 @section('content')
     <div id="waitlist-page">

@@ -1,6 +1,8 @@
 @extends('layouts.landing-page')
 
-@section('title', 'Page title')
+@section('title')
+{{$settings["general"]->site_title}} | Thailand's number #1 Burger
+@endsection
 
  @section('content')
        <section id="information">
