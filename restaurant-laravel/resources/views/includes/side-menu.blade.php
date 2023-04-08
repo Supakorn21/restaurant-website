@@ -1,6 +1,6 @@
    <div class="side-menu">
        <a href="/" class="logo">
-           <img src="https://www.pngitem.com/pimgs/m/21-216129_restaurants-clipart-restaurant-symbol-logo-for-restaurant-png.png"
+           <img src="{{$settings["general"]->logo_image_url}}"
                alt="" />
        </a>
        <div class="menu">
@@ -25,19 +25,19 @@
            </ul>
        </div>
        <div class="social-icons">
-           <a href="#"><i class="fa-brands fa-facebook-f"></i> </a>
+           <a href="{{$settings["social"]->facebook_url}}" target="blank"><i class="fa-brands fa-facebook-f"></i> </a>
 
-           <a href="#"><i class="fa-brands fa-twitter"></i> </a>
+           <a href="{{$settings["social"]->twitter_url}}" target="blank"><i class="fa-brands fa-twitter"></i> </a>
 
-           <a href="#"> <i class="fa-brands fa-instagram"></i> </a>
+           <a href="{{$settings["social"]->instagram_url}}" target="blank"> <i class="fa-brands fa-instagram"></i> </a>
        </div>
        <div class="location">
            <div class="address">
-               234 Main st, <br />
-               New York, New York 11747
+               {{$settings["general"]->address_1}} {{$settings["general"]->address_2}}  <br />
+               {{$settings["general"]->city}}, {{$settings["general"]->province}}  {{$settings["general"]->zipcode}} 
            </div>
            <div class="phone-number">
-               <a href="tell:+66951833510"> +66951833510 </a>
+               <a href="tel:{{$settings["general"]->phone_number}}"> {{$settings["general"]->phone_number}} </a>
            </div>
        </div>
    </div>

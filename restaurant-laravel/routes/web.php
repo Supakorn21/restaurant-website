@@ -10,7 +10,13 @@ use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\MemberController;
 use App\Http\Controllers\admin\ReservationController;
 use App\Http\Controllers\admin\SettingController;
+use App\Models\GeneralSetting;
 use App\Models\Reservation;
+use App\Models\SeoSetting;
+use App\Models\SocialSetting;
+use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Bootstrap\RegisterFacades;
+use Illuminate\Support\Facades;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,3 +116,15 @@ Route::get('/admin/login', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Facades\View::composer(['home', 'pages.about', 'pages.contact', 'pages.offers', 'pages.reservations', 'thankyou-offers', 'pages.thankyou-reservations', 'menu.index', 'menu.single-menu', 'layouts.admin'], function (View $view) {
+    $generalSettings = GeneralSetting::find(1);
+    $socialSettings = SocialSetting::find(1);
+    $seoSettings = SeoSetting::find(1);
+
+    $view->with('settings', [
+        "general" => $generalSettings,
+        "social" => $socialSettings,
+        "seo" => $seoSettings,
+    ]);
+});

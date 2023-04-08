@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GeneralSetting;
 use App\Models\Member;
 use App\Models\Reservation;
+use App\Models\SocialSetting;
 use Illuminate\Http\Request;
 
 class StaticPagesController extends Controller
 {
     public function home()
     {
+
+
         return view('home');
     }
     public function about()
