@@ -25,7 +25,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
             <!-- ============================================================== -->
             <!-- end pageheader  -->
@@ -38,7 +38,7 @@
                             <div class="card-body">
                                 <h5 class="text-muted">Estimated Revenue</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">฿{{$estimated_income_last_30}}</h1>
+                                    <h1 class="mb-1">฿{{ $estimated_income_last_30 }}</h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                     <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
@@ -52,7 +52,7 @@
                             <div class="card-body">
                                 <h5 class="text-muted">Total Customers</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">{{$total_customers_last_30}}</h1>
+                                    <h1 class="mb-1">{{ $total_customers_last_30 }}</h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-success font-weight-bold">
                                     <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
@@ -66,7 +66,7 @@
                             <div class="card-body">
                                 <h5 class="text-muted">Total Reservations</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">{{$total_reservations_last_30}}</h1>
+                                    <h1 class="mb-1">{{ $total_reservations_last_30 }}</h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-primary font-weight-bold">
                                     <span>N/A</span>
@@ -80,7 +80,7 @@
                             <div class="card-body">
                                 <h5 class="text-muted">Total Employees</h5>
                                 <div class="metric-value d-inline-block">
-                                    <h1 class="mb-1">{{$total_employees}}</h1>
+                                    <h1 class="mb-1">{{ $total_employees }}</h1>
                                 </div>
                                 <div class="metric-label d-inline-block float-right text-secondary font-weight-bold">
                                     <span>-2.00%</span>
@@ -92,15 +92,15 @@
                 </div>
                 <div class="row">
                     <!-- ============================================================== -->
-<div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
+                    <div class="col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header"> Total Revenue</h5>
+                            <h5 class="card-header"> Estimated Daily Revenue</h5>
                             <div class="card-body">
                                 <div id="morris_totalrevenue"></div>
                             </div>
                             <div class="card-footer">
                                 <p class="display-7 font-weight-bold"><span
-                                        class="text-primary d-inline-block">$26,000</span><span
+                                        class="text-primary d-inline-block">Estimated Revenue Last 30 Days ฿{{ $estimated_income_last_30 }}</span><span
                                         class="text-success float-right">+9.45%</span></p>
                             </div>
                         </div>
@@ -265,13 +265,13 @@
                         <div class="card">
                             <div class="card-header">
                                 <!-- <div class="float-right">
-                                                    <select class="custom-select">
-                                                        <option selected>Today</option>
-                                                        <option value="1">Weekly</option>
-                                                        <option value="2">Monthly</option>
-                                                        <option value="3">Yearly</option>
-                                                    </select>
-                                                </div> -->
+                                                        <select class="custom-select">
+                                                            <option selected>Today</option>
+                                                            <option value="1">Weekly</option>
+                                                            <option value="2">Monthly</option>
+                                                            <option value="3">Yearly</option>
+                                                        </select>
+                                                    </div> -->
                                 <h5 class="mb-0"> Product Sales</h5>
                             </div>
                             <div class="card-body">
@@ -451,7 +451,7 @@
                     <!-- end category revenue  -->
                     <!-- ============================================================== -->
 
-                  
+
                 </div>
                 <div class="row">
                     <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
