@@ -20,12 +20,12 @@ class GeneralSettingSeeder extends Seeder
         DB::table('general_settings')->insert([
             'site_title' => 'Tommy Burger',
             'logo_image_url' => 'https://www.pngitem.com/pimgs/m/21-216129_restaurants-clipart-restaurant-symbol-logo-for-restaurant-png.png',
-            'address_1' => '150/312 Countrypark3 Bangsaen ',
-            'address_2' => '',
-            'city' => 'Chonburi',
-            'province' =>  'Chonburi',
-            'zipcode' => '20130',
-            'phone_number' => '098-4637184',
+            'address_1' => 'สถานีบริการปตท.เลขที่ 158/2 หมู่ 2 ถนนชลบุรี-บายพาส ตำบล บ้านสวน    ',
+            'address_2' => 'อำเภอเมืองชลบุรี ',
+            'city' => 'ชลบุรี',
+            'province' =>  'ชลบุรี',
+            'zipcode' => '20000',
+            'phone_number' => '0657257098',
             'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
             'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);

@@ -35,12 +35,12 @@
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"><a href="../index.html"><img class="logo-img" src="../assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-header text-center"><a href="/login"><img class="logo-img" src="../assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
             <div class="card-body">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
-                        <input id="email" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="off" autofocus placeholder="email">
+                        <input id="email" type="email" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="off" autofocus placeholder="Email">
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                        <input id="password" type="password" class="form-control form-control-lg @error('password') is-invalid @enderror" name="password" required placeholder="Password"autocomplete="current-password">
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">
@@ -70,7 +70,7 @@
             </div>
             <div class="card-footer bg-white p-0  ">
                 <div class="card-footer-item card-footer-item-bordered">
-                    <a href="#" class="footer-link">Create An Account</a></div>
+                    <a href="/register" class="footer-link">Create An Account</a></div>
                 <div class="card-footer-item card-footer-item-bordered">
                     <a class="footer-link" href="{{ route('password.request') }}">
                             Forgot Password
