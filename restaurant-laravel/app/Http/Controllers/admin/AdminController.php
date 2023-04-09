@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -46,11 +47,15 @@ class AdminController extends Controller
         '),
         )[0]->total;
 
+        $reservations = Reservation::where('guests_total', '>', 0)->limit(5)->orderBy('created_at', 'desc')->get();
+
+
         return view('admin.dashboard', [
             'estimated_income_last_30' => $estimated_income_last_30,
             'total_customers_last_30' => $total_customers_last_30,
             'total_reservations_last_30' => $total_reservations_last_30,
             'total_employees' => $total_employees,
+            'reservations' => $reservations
         ]);
     }
 
