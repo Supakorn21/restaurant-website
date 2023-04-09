@@ -48,14 +48,14 @@ Route::get('/admin', [AdminController::class, 'dashboard']);
 
 
 // Admin Food Categories
-Route::get('/admin/food-categories', [FoodCategoriesController::class, 'index']);
-Route::get('/admin/food-categories/create', [FoodCategoriesController::class, 'create']);
-Route::get('/admin/food-categories/{id}/edit', [FoodCategoriesController::class, 'edit']);
-Route::post('/admin/food-categories', [FoodCategoriesController::class, 'store']);
+Route::get('/admin/food-categories', [FoodCategoriesController::class, 'index'])->middleware('role:Admin');
+Route::get('/admin/food-categories/create', [FoodCategoriesController::class, 'create'])->middleware('role:Admin');
+Route::get('/admin/food-categories/{id}/edit', [FoodCategoriesController::class, 'edit'])->middleware('role:Admin');
+Route::post('/admin/food-categories', [FoodCategoriesController::class, 'store'])->middleware('role:Admin');
 // use POST but method PUT on the edit page
-Route::put('/admin/food-categories/{id}', [FoodCategoriesController::class, 'update']);
+Route::put('/admin/food-categories/{id}', [FoodCategoriesController::class, 'update'])->middleware('role:Admin');
 // post or get for delete
-Route::delete('/admin/food-categories/{id}/delete', [FoodCategoriesController::class, 'delete']);
+Route::delete('/admin/food-categories/{id}/delete', [FoodCategoriesController::class, 'delete'])->middleware('role:Admin');
 
 
 // Admin Food Items
@@ -86,23 +86,23 @@ Route::put('/admin/reservations/{id}', [ReservationController::class, 'update'])
 Route::delete('/admin/reservations/{id}/delete', [ReservationController::class, 'delete']);
 
 // Admin Users
-Route::get('/admin/users', [UsersController::class, 'index']);
-Route::get('/admin/users/create', [UsersController::class, 'create']);
-Route::get('/admin/users/{id}/edit', [UsersController::class, 'edit']);
-Route::post('/admin/users', [UsersController::class, 'store']);
+Route::get('/admin/users', [UsersController::class, 'index'])->middleware('role:Admin');
+Route::get('/admin/users/create', [UsersController::class, 'create'])->middleware('role:Admin');
+Route::get('/admin/users/{id}/edit', [UsersController::class, 'edit'])->middleware('role:Admin');
+Route::post('/admin/users', [UsersController::class, 'store'])->middleware('role:Admin');
 // use POST but method PUT on the edit page
-Route::put('/admin/users/{id}', [UsersController::class, 'update']);
+Route::put('/admin/users/{id}', [UsersController::class, 'update'])->middleware('role:Admin');
 // post or get for delete
-Route::delete('/admin/users/{id}/delete', [UsersController::class, 'delete']);
+Route::delete('/admin/users/{id}/delete', [UsersController::class, 'delete'])->middleware('role:Admin');
 
 
 // Admin Settings
-Route::get('/admin/settings/general', [SettingController::class, 'general']);
-Route::put('/admin/settings/general', [SettingController::class, 'saveGeneral']);
-Route::get('/admin/settings/seo', [SettingController::class, 'seo']);
-Route::put('/admin/settings/seo', [SettingController::class, 'saveSeo']);
-Route::get('/admin/settings/social', [SettingController::class, 'social']);
-Route::put('/admin/settings/social', [SettingController::class, 'saveSocial']);
+Route::get('/admin/settings/general', [SettingController::class, 'general'])->middleware('role:Admin');
+Route::put('/admin/settings/general', [SettingController::class, 'saveGeneral'])->middleware('role:Admin');
+Route::get('/admin/settings/seo', [SettingController::class, 'seo'])->middleware('role:Admin');
+Route::put('/admin/settings/seo', [SettingController::class, 'saveSeo'])->middleware('role:Admin');
+Route::get('/admin/settings/social', [SettingController::class, 'social'])->middleware('role:Admin');
+Route::put('/admin/settings/social', [SettingController::class, 'saveSocial'])->middleware('role:Admin');
 
 
 // Admin Authentication
