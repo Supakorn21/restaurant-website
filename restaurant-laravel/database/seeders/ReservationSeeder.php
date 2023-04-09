@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class ReservationSeeder extends Seeder
 {
@@ -16,15 +17,19 @@ class ReservationSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('reservations')->insert([
-            'fname' => 'Ramsey',
-            'lname' => 'Jordan',
-            'email' => 'rj@gmail.com',
-            'phone_number' => '0846237812',
-            'guests_total' => '3',
-            'time' => '7',
-            'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
-            'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
-        ]);
+        $faker = Faker::create();
+        foreach (range(1, 100) as $index) {
+            DB::table('reservations')->insert([
+                'fname' =>
+                $faker->firstName,
+                'lname' => $faker->lastName,
+                'email' =>  $faker->email,
+                'phone_number' => $faker->phoneNumber,
+                'guests_total' => rand(1, 5),
+                'time' =>  rand(6, 10),
+                'updated_at' => $faker->dateTimeThisMonth,
+                'created_at' => $faker->dateTimeThisMonth,
+            ]);
+        }
     }
 }
