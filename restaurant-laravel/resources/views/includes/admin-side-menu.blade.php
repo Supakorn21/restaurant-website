@@ -17,8 +17,6 @@
                               class="badge badge-success">6</span></a>
                       <div id="submenu-1" class="collapse submenu" style="">
                           <ul class="nav flex-column">
-
-
                               <li class="nav-item">
                                   <a class="nav-link" href="/admin">Home</a>
                               </li>
@@ -31,24 +29,25 @@
                           data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Menu</a>
                       <div id="submenu-2" class="collapse submenu" style="">
                           <ul class="nav flex-column">
-
-                              <li class="nav-item">
-                                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
-                                      data-target="#submenu-1-2" aria-controls="submenu-1-2">Food Categories</a>
-                                  <div id="submenu-1-2" class="submenu collapse " style="">
-                                      <ul class="nav flex-column">
-                                          <li class="nav-item">
-                                              <a class="nav-link" href="/admin/food-categories">All Food Categories
-                                                  <span class="badge badge-secondary">New</span></a>
-                                          </li>
-                                          <li class="nav-item">
-                                              <a class="nav-link" href="/admin/food-categories/create">New Food
-                                                  Categories
-                                                  <span class="badge badge-secondary">New</span></a>
-                                          </li>
-                                      </ul>
-                                  </div>
-                              </li>
+                              @if (Auth::user()->isAdmin())
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
+                                          data-target="#submenu-1-2" aria-controls="submenu-1-2">Food Categories</a>
+                                      <div id="submenu-1-2" class="submenu collapse " style="">
+                                          <ul class="nav flex-column">
+                                              <li class="nav-item">
+                                                  <a class="nav-link" href="/admin/food-categories">All Food Categories
+                                                      <span class="badge badge-secondary">New</span></a>
+                                              </li>
+                                              <li class="nav-item">
+                                                  <a class="nav-link" href="/admin/food-categories/create">New Food
+                                                      Categories
+                                                      <span class="badge badge-secondary">New</span></a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </li>
+                              @endif
                               <li class="nav-item">
                                   <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
                                       data-target="#submenu-1-3" aria-controls="submenu-1-2">Food Items</a>
@@ -65,9 +64,6 @@
                                       </ul>
                                   </div>
                               </li>
-
-
-
                           </ul>
                       </div>
                   </li>
@@ -115,6 +111,7 @@
                           </ul>
                       </div>
                   </li>
+                     @if (Auth::user()->isAdmin())
                   <li class="nav-item">
                       <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                           data-target="#submenu-4" aria-controls="submenu-4"><i
@@ -134,6 +131,8 @@
                           </ul>
                       </div>
                   </li>
+                  @endif
+                   @if (Auth::user()->isAdmin())
                   <li class="nav-item">
                       <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                           data-target="#submenu-5" aria-controls="submenu-5"><i
@@ -155,7 +154,7 @@
                           </ul>
                       </div>
                   </li>
-
+ @endif
               </ul>
           </div>
       </nav>
