@@ -50,18 +50,32 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Burgers</td>
-                                    <td>$9</td>
-                                    <td>2/2/2023</td>
-                                    <td> <a href="/admin/food-items/1/edit"><i
-                                                class="fa-regular fa-pen-to-square"></i></a></td>
-                                    <td> <a href="/admin/food-items/1/delete" onclick="if(!confirm('Are you sure you want delete item?')) {return false;}"><i class="far fa-trash-alt "></i></a></td>
-                                </tr>
+
+                                @foreach ($items as $item)
+                                    <tr>
+                                        <th scope="row">{{$item->id}}</th>
+                                        <td>{{$item->title}}</td>
+                                        <td>${{$item->price}}</td>
+                                        <td>{{ date('m/d/Y', strtotime($item->updated_at)) }}</td>
+                                        <td> <a href="/admin/food-items/{{$item->id}}/edit"><i
+                                                    class="fa-regular fa-pen-to-square"></i></a></td>
+                                        <td>   
+                                             <a onclick=" if(confirm('Are you sure you want to delete this item?')) { event.preventDefault(); document.getElementById('delete-item-{{ $item->id }}').submit(); } "
+                                                href="#"><i class="far fa-trash-alt "></i></a>
+                                            <form id="delete-item-{{ $item->id }}"
+                                                action="/admin/food-items/{{ $item->id }}/delete" method="POST"
+                                                class="d-none">
+                                                @method('DELETE')
+                                                @csrf
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+
 
                             </tbody>
                         </table>
+                           {{ $items->links() }}
                     </div>
                 </div>
             </div>

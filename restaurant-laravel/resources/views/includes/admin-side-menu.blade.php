@@ -17,8 +17,6 @@
                               class="badge badge-success">6</span></a>
                       <div id="submenu-1" class="collapse submenu" style="">
                           <ul class="nav flex-column">
-
-
                               <li class="nav-item">
                                   <a class="nav-link" href="/admin">Home</a>
                               </li>
@@ -31,23 +29,25 @@
                           data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>Menu</a>
                       <div id="submenu-2" class="collapse submenu" style="">
                           <ul class="nav flex-column">
-
-                              <li class="nav-item">
-                                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
-                                      data-target="#submenu-1-2" aria-controls="submenu-1-2">Food Categories</a>
-                                  <div id="submenu-1-2" class="submenu collapse " style="">
-                                      <ul class="nav flex-column">
-                                          <li class="nav-item">
-                                              <a class="nav-link" href="/admin/food-categories">All Food Categories
-                                                  <span class="badge badge-secondary">New</span></a>
-                                          </li>
-                                          <li class="nav-item">
-                                              <a class="nav-link" href="/admin/food-categories/create">New Food Categories
-                                                  <span class="badge badge-secondary">New</span></a>
-                                          </li>
-                                      </ul>
-                                  </div>
-                              </li>
+                              @if (Auth::user()->isAdmin())
+                                  <li class="nav-item">
+                                      <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
+                                          data-target="#submenu-1-2" aria-controls="submenu-1-2">Food Categories</a>
+                                      <div id="submenu-1-2" class="submenu collapse " style="">
+                                          <ul class="nav flex-column">
+                                              <li class="nav-item">
+                                                  <a class="nav-link" href="/admin/food-categories">All Food Categories
+                                                      <span class="badge badge-secondary">New</span></a>
+                                              </li>
+                                              <li class="nav-item">
+                                                  <a class="nav-link" href="/admin/food-categories/create">New Food
+                                                      Categories
+                                                      <span class="badge badge-secondary">New</span></a>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </li>
+                              @endif
                               <li class="nav-item">
                                   <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
                                       data-target="#submenu-1-3" aria-controls="submenu-1-2">Food Items</a>
@@ -64,9 +64,6 @@
                                       </ul>
                                   </div>
                               </li>
-
-
-
                           </ul>
                       </div>
                   </li>
@@ -77,16 +74,44 @@
                       <div id="submenu-3" class="collapse submenu" style="">
                           <ul class="nav flex-column">
                               <li class="nav-item">
-                                  <a class="nav-link" href="/admin/offers-members">Offers Members <span
-                                          class="badge badge-secondary">New</span></a>
+                                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
+                                      data-target="#submenu-3-1" aria-controls="submenu-3-1">Offers Members</a>
+                                  <div id="submenu-3-1" class="submenu collapse " style="">
+                                      <ul class="nav flex-column">
+                                          <li class="nav-item">
+                                              <a class="nav-link" href="/admin/members">All Offers Members <span
+                                                      class="badge badge-secondary">New</span></a>
+                                          </li>
+                                          {{-- <li class="nav-item">
+                                              <a class="nav-link" href="/admin/members/create">New Members
+                                                  <span class="badge badge-secondary">New</span></a>
+                                          </li> --}}
+                                      </ul>
+                                  </div>
                               </li>
+
                               <li class="nav-item">
-                                  <a class="nav-link" href="/admin/reservations">Reservations <span
-                                          class="badge badge-secondary">New</span></a>
+                                  <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="true"
+                                      data-target="#submenu-3-2" aria-controls="submenu-3-2">Reservations</a>
+                                  <div id="submenu-3-2" class="submenu collapse " style="">
+                                      <ul class="nav flex-column">
+                                          <li class="nav-item">
+                                              <a class="nav-link" href="/admin/reservations">All Reservations <span
+                                                      class="badge badge-secondary">New</span></a>
+                                          </li>
+                                          <li class="nav-item">
+                                              <a class="nav-link" href="/admin/reservations/create">New Reservations
+                                                  <span class="badge badge-secondary">New</span></a>
+                                          </li>
+                                      </ul>
+                                  </div>
                               </li>
+
+
                           </ul>
                       </div>
                   </li>
+                     @if (Auth::user()->isAdmin())
                   <li class="nav-item">
                       <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                           data-target="#submenu-4" aria-controls="submenu-4"><i
@@ -106,6 +131,8 @@
                           </ul>
                       </div>
                   </li>
+                  @endif
+                   @if (Auth::user()->isAdmin())
                   <li class="nav-item">
                       <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false"
                           data-target="#submenu-5" aria-controls="submenu-5"><i
@@ -113,13 +140,21 @@
                       <div id="submenu-5" class="collapse submenu" style="">
                           <ul class="nav flex-column">
                               <li class="nav-item">
-                                  <a class="nav-link" href="pages/cards.html">General Settings <span
+                                  <a class="nav-link" href="/admin/settings/general">General Settings <span
+                                          class="badge badge-secondary">New</span></a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="/admin/settings/seo">SEO <span
+                                          class="badge badge-secondary">New</span></a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="/admin/settings/social">Social Accounts<span
                                           class="badge badge-secondary">New</span></a>
                               </li>
                           </ul>
                       </div>
                   </li>
-
+ @endif
               </ul>
           </div>
       </nav>

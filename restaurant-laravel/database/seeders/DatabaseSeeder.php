@@ -3,6 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\FoodCategory;
+use App\Models\FoodItem;
+use App\Models\Member;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +18,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(UsersTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
+        $this->call(FoodCategorySeeder::class);
+        $this->call(FoodItemSeeder::class);
+        $this->call(MemberSeeder::class);
+        $this->call(ReservationSeeder::class);
+        $this->call(GeneralSettingSeeder::class);
+        $this->call(SeoSettingSeeder::class);
+        $this->call(SocialSettingSeeder::class);
     }
 }

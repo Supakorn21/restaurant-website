@@ -2,6 +2,7 @@
 @import "bootstrap.min.css";
 @import "home";
 @import "pages/about";
+@import "pages/contact";
 @import "pages/waitlist";
 @import "pages/offers";
 @import "menu/index";
@@ -32,7 +33,11 @@ a {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-
+    .welcome-jumbo {
+        .menu-icon {
+            display: none;
+        }
+    }
     .side-menu {
         background-color: white;
         padding: 50px;
@@ -80,6 +85,7 @@ a {
 
         .social-icons {
             display: flex;
+            margin-bottom: 1rem;
             a {
                 display: flex;
                 background: #c2c8cc;
@@ -95,7 +101,6 @@ a {
         }
 
         .location {
-            position: absolute;
             bottom: 100px;
             align-self: center;
             .address {
@@ -127,6 +132,9 @@ a {
             rgba(237, 72, 82, 1) 0%,
             rgba(156, 27, 36, 1) 100%
         );
+        .menu-icon {
+            display: none;
+        }
     }
 }
 
@@ -218,7 +226,6 @@ a {
     }
     .container {
         width: 100%;
-        max-width: 1400px;
         position: relative;
         .left-btn,
         .right-btn {
@@ -249,6 +256,7 @@ a {
         position: relative;
         font-size: 0;
         .sliding-system {
+            transition: all 0.3s ease-in-out;
             white-space: nowrap;
             transform: translate3d(-0%, 0, 0);
         }
@@ -334,6 +342,23 @@ h2 {
     #app-layout {
         .side-menu {
             transform: translate3d(-300px, 0, 0);
+            position: fixed;
+            transition: all 0.3s ease-in-out;
+        }
+        .side-menu.side-menu.active {
+            transform: translate3d(0%, 0, 0);
+            display: block;
+            z-index: 10;
+            transition: all 0.3s ease-in-out;
+        }
+        .menu-icon {
+            display: block !important;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
         }
         .welcome-jumbo {
             h1 {
@@ -341,6 +366,9 @@ h2 {
             }
             .burger-fries {
                 width: 183%;
+            }
+            .menu-icon {
+                display: block;
             }
             width: 100%;
             max-width: 100vw !important;
@@ -385,9 +413,11 @@ h2 {
         .container {
             .left-btn {
                 left: -20px;
+                display: none;
             }
             .right-btn {
                 right: -20px;
+                display: none;
             }
         }
 
@@ -396,8 +426,13 @@ h2 {
             line-height: 1.4;
         }
         .food-slider {
+            .sliding-system {
+                display: grid;
+                gap: 1rem;
+            }
             .slide {
                 width: 100%;
+                display: block;
             }
         }
     }
@@ -408,6 +443,14 @@ h2 {
     #app-layout {
         .side-menu {
             transform: translate3d(-300px, 0, 0);
+            position: fixed;
+            transition: all 0.3s ease-in-out;
+        }
+        .side-menu.side-menu.active {
+            transform: translate3d(0%, 0, 0);
+            display: block;
+            z-index: 10;
+            transition: all 0.3s ease-in-out;
         }
         .welcome-jumbo {
             h1 {
@@ -421,6 +464,16 @@ h2 {
             height: 100vh;
             padding: 20px;
             transform: translate3d(0, 0, 0);
+            .menu-icon {
+                display: block !important;
+                position: fixed;
+                z-index: 11;
+                top: 20px;
+                right: 20px;
+                font-size: 24px;
+                cursor: pointer;
+                color: white;
+            }
         }
         #content-section {
             width: 100%;
@@ -429,6 +482,15 @@ h2 {
             padding: 50px;
             overflow-y: scroll;
             transform: translate3d(0, 0, 0);
+            .menu-icon {
+                display: block;
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                font-size: 24px;
+                cursor: pointer;
+                color: white;
+            }
         }
     }
     #information {
@@ -474,18 +536,6 @@ h2 {
             .slide {
                 width: 50%;
             }
-        }
-    }
-    //
-    #app-layout {
-        .side-menu {
-            transform: translate3d(-300px, 0, 0);
-        }
-        .welcome-jumbo {
-            width: 100%;
-            max-width: 100vw;
-            padding: 20px;
-            transform: translate3d(0, 0, 0);
         }
     }
 }
