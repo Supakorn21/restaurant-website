@@ -17,6 +17,7 @@ use App\Models\SocialSetting;
 use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Bootstrap\RegisterFacades;
 use Illuminate\Support\Facades;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
