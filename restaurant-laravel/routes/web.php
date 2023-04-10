@@ -118,7 +118,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Facades\View::composer(['home', 'pages.about', 'pages.contact', 'pages.offers', 'pages.reservations', 'thankyou-offers', 'pages.thankyou-reservations', 'menu.index', 'menu.single-menu', 'layouts.admin'], function (View $view) {
+Facades\View::composer(['home', 'pages.about', 'pages.contact', 'pages.offers', 'pages.reservations', 'thankyou-offers', 'pages.thankyou-reservations', 'menu.all-categories', 'menu.single-menu', 'layouts.admin'], function (View $view) {
     $generalSettings = GeneralSetting::find(1);
     $socialSettings = SocialSetting::find(1);
     $seoSettings = SeoSetting::find(1);

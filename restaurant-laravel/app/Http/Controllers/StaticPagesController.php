@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FoodCategory;
+use App\Models\FoodItem;
 use App\Models\GeneralSetting;
 use App\Models\Member;
 use App\Models\Reservation;
@@ -12,8 +14,6 @@ class StaticPagesController extends Controller
 {
     public function home()
     {
-
-
         return view('home');
     }
     public function about()
@@ -81,13 +81,23 @@ class StaticPagesController extends Controller
     }
     public function menu()
     {
-        return view('menu.index');
+        $categories = FoodCategory::paginate(10);
+
+
+        return view('menu.all-categories', [
+            'categories' => $categories,
+        ]);
     }
     public function singleMenu($slug)
     {
-        $slug = ucfirst($slug);
+        $foodCategory = FoodCategory::where('title', '=', $slug)->first();
+        $foodItems = FoodItem::where('category_id', '=', $foodCategory->id)->get();
+
+
+
         return view('menu.single-menu', [
-            'foodItem' => $slug
+            'foodItem' => ucfirst($slug),
+            'foodItems' => $foodItems,
         ]);
     }
 }

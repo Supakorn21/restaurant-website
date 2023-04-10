@@ -18,7 +18,12 @@ class Role
      */
     public function handle(Request $request, Closure $next, ...$roles)
     {
+        if (!Auth::check()) {
+            return redirect('/login');
+        }
+
         $user = Auth::user();
+
         foreach ($roles as $role) {
             $ro = Ro::where('title', $role)->first();
             if ($user->roles->contains($ro)) {
