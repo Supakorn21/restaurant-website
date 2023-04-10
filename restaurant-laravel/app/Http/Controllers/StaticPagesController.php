@@ -14,7 +14,12 @@ class StaticPagesController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $categories = FoodCategory::all();
+
+
+        return view('home', [
+            'categories' => $categories,
+        ]);
     }
     public function about()
     {

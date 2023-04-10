@@ -398,6 +398,7 @@ h2 {
         .food-slider {
             .slide {
                 width: 100%;
+                display: block !important;
             }
         }
     }
@@ -473,6 +474,7 @@ h2 {
         .food-slider {
             .slide {
                 width: 50%;
+                display: block;
             }
         }
     }
