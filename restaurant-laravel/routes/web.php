@@ -19,7 +19,6 @@ use Illuminate\Foundation\Bootstrap\RegisterFacades;
 use Illuminate\Support\Facades;
 use Illuminate\Support\Facades\Auth;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

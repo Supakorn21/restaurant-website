@@ -29,7 +29,7 @@
             ab optio doloribus odio quam dolores. Aliquid, unde.
           </p>
         </div>
-        <a href="#" class="about-link">
+        <a href="/about" class="about-link">
           <span>Learn More About Our Restaurant </span>
           <div class="circle-right">
             <i class="fa-solid fa-chevron-right"></i>

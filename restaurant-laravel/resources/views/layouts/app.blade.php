@@ -28,10 +28,10 @@
 
     </section>
     <script src="/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="{{ asset('/js/slider.js') }}">
+    <script src="{{ asset('./js/slider.js') }}">
         < script src = "{{ asset('/js/sideNav.js') }}" >
     </script>
-    <script src="{{ asset('/js/sideNav.js') }}"></script>
+    <script src="{{ asset('./js/sideNav.js') }}"></script>
 </body>
 
 </html>

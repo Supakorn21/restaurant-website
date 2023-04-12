@@ -9,13 +9,14 @@ use App\Models\Member;
 use App\Models\Reservation;
 use App\Models\SocialSetting;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class StaticPagesController extends Controller
 {
     public function home()
     {
-        $categories = FoodCategory::all();
 
+        $categories = FoodCategory::all();;
 
         return view('home', [
             'categories' => $categories,

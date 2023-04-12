@@ -9,7 +9,7 @@ About - {{$settings["general"]->site_title}}
         <div class="content-box">
             <div class="row">
                 <div class="col-md-6">
-                    <h1>About Page</h1>
+                    <h1>About Us</h1>
                     <p>I'm baby butcher vaporware schlitz kombucha solarpunk chicharrones subway tile. Vaporware knausgaard
                         mlkshk butcher shaman hexagon austin polaroid kombucha woke praxis. Cronut photo booth neutral milk
                         hotel paleo drinking vinegar celiac echo park art party fanny pack flannel truffaut praxis. You

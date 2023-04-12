@@ -36,7 +36,17 @@
     <div class="splash-container">
         <div class="card ">
             <div class="card-header text-center"><a href="/login"><img class="logo-img" src="../assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+           
             <div class="card-body">
+                <div class="demo">
+                    <h4>Admin Dashboard</h4>
+                    <span>Email: tommy@gmail.com</span><br>
+                    <span>Password: 12345678</span>
+                    <p>********************************</p>
+                       <h4>Employee Dashboard</h4>
+                    <span>Email: cindy@gmail.com</span><br>
+                    <span>Password: 12345678</span>
+                </div>
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="form-group">
@@ -71,17 +81,11 @@
             <div class="card-footer bg-white p-0  ">
                 <div class="card-footer-item card-footer-item-bordered">
                     <a href="/register" class="footer-link">Create An Account</a></div>
-                <div class="card-footer-item card-footer-item-bordered">
-                    <a class="footer-link" href="{{ route('password.request') }}">
-                            Forgot Password
-                        </a>
-                    @if (Route::has('password.request'))
-                        
-                    @endif
-                </div>
+               
             </div>
         </div>
     </div>
+   
   
     <!-- ============================================================== -->
     <!-- end login page  -->

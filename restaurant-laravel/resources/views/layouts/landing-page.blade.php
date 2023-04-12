@@ -5,7 +5,7 @@
 
     @include('includes.metatags')
 
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 
 <body class="antialiased">
