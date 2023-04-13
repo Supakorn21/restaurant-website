@@ -44,6 +44,16 @@ a {
         position: absolute;
         width: 300px;
         height: 100%;
+        transition: all 0.3s ease-in-out;
+        .close-icon {
+            text-align: end;
+            position: absolute;
+            top: 1rem;
+            right: 1.7rem;
+            font-size: 2rem;
+            cursor: pointer;
+            display: none;
+        }
         .logo {
             display: flex;
             justify-content: center;
@@ -352,6 +362,9 @@ h2 {
             z-index: 10;
             transition: all 0.3s ease-in-out;
             padding: 2rem;
+            .close-icon {
+                display: block;
+            }
         }
         .menu-icon {
             display: block !important;
@@ -454,6 +467,9 @@ h2 {
             z-index: 10;
             transition: all 0.3s ease-in-out;
             padding: 2rem;
+            .close-icon {
+                display: block;
+            }
         }
         .welcome-jumbo {
             h1 {
