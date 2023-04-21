@@ -12,7 +12,6 @@ function desktopSlider() {
         moveTotal = 100;
         // Right Button
         $(".right-btn").on("click", () => {
-            console.log("clicked right btn");
             if (currentSlide < maxSlides) {
                 currentSlide += 100;
                 $(".sliding-system").css(
@@ -23,7 +22,6 @@ function desktopSlider() {
         });
         // Left Button
         $(".left-btn").on("click", () => {
-            console.log("clicked right btn");
             if (currentSlide != 0) {
                 currentSlide -= 100;
                 $(".sliding-system").css(
@@ -43,7 +41,6 @@ function tabletSlider() {
         moveTotal = 100;
         // Right Button
         $(".right-btn").on("click", () => {
-            console.log("clicked right btn");
             if (currentSlide < maxSlides * 100 - 100) {
                 currentSlide += 50;
                 $(".sliding-system").css(
@@ -54,7 +51,6 @@ function tabletSlider() {
         });
         // Left Button
         $(".left-btn").on("click", () => {
-            console.log("clicked right btn");
             if (currentSlide != 0) {
                 currentSlide -= 50;
                 $(".sliding-system").css(
@@ -66,6 +62,6 @@ function tabletSlider() {
     }
 }
 var b = window.matchMedia("(min-width: 768px) and (max-width: 997px");
-console.log(b);
+
 tabletSlider(b);
 b.addListener(tabletSlider);

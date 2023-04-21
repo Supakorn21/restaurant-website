@@ -28,6 +28,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        if (env(key: "APP_ENV") !== "local") {
+            URL::forceScheme(scheme: "https");
+        }
+
+
         View::composer(['home', 'pages.about', 'pages.contact', 'pages.offers', 'pages.reservations', 'thankyou-offers', 'pages.thankyou-reservations', 'menu.all-categories', 'menu.single-menu', 'layouts.admin', 'layouts.landing-page', 'layouts.app'], function ($view) {
             $generalSettings = GeneralSetting::first();
             $socialSettings = SocialSetting::first();
