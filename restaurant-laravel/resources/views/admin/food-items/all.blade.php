@@ -55,7 +55,7 @@
                                     <tr>
                                         <th scope="row">{{$item->id}}</th>
                                         <td>{{$item->title}}</td>
-                                        <td>${{$item->price}}</td>
+                                        <td>฿{{$item->price}}</td>
                                         <td>{{ date('m/d/Y', strtotime($item->updated_at)) }}</td>
                                         <td> <a href="/admin/food-items/{{$item->id}}/edit"><i
                                                     class="fa-regular fa-pen-to-square"></i></a></td>
