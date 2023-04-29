@@ -57,9 +57,12 @@ class UsersController extends Controller
 
         $user = User::find($id);
         $roles = Role::all();
+        $selectedRoleId = $user->roles->pluck('id')->toArray()[0];
+
         return view('admin.users.edit', [
             'user' => $user,
-            'roles' => $roles
+            'roles' => $roles,
+            'selectedRoleId' => $selectedRoleId
         ]);
     }
     public function update($id)

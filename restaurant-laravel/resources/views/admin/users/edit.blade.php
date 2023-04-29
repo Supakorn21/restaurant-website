@@ -27,14 +27,16 @@
             <div class="card">
                 <h5 class="card-header">Edit Users</h5>
                 <div class="card-body">
-                    <form method="POST" action="/admin/users/{{$user->id}}" id="basicform" data-parsley-validate="" novalidate="">
+                    <form method="POST" action="/admin/users/{{ $user->id }}" id="basicform" data-parsley-validate=""
+                        novalidate="">
                         @csrf
                         @method('PUT')
-                       <div class="form-group">
+                        <div class="form-group">
                             <label for="inputfirstname">First Name</label>
                             <input id="inputfirstname" type="text"
                                 class="form-control form-control-lg @error('fname') is-invalid @enderror" name="fname"
-                                placeholder="First Name" value="{{ old('fname', $user->fname) }}" required autocomplete="name" autofocus>
+                                placeholder="First Name" value="{{ old('fname', $user->fname) }}" required
+                                autocomplete="name" autofocus>
                             @error('fname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -46,7 +48,8 @@
                             <label for="inputlastname">Last Name</label>
                             <input id="inputlastname" type="text"
                                 class="form-control form-control-lg @error('lname') is-invalid @enderror" name="lname"
-                                placeholder="Last Name" value="{{ old('lname', $user->lname) }}" required autocomplete="name" autofocus>
+                                placeholder="Last Name" value="{{ old('lname', $user->lname) }}" required
+                                autocomplete="name" autofocus>
                             @error('lname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -57,7 +60,7 @@
                             <label for="inputemail">Email</label>
                             <input id="inputemail" type="email"
                                 class="form-control form-control-lg @error('email') is-invalid @enderror" name="email"
-                                placeholder="Email" value="{{ old('email',  $user->email) }}" required autocomplete="email">
+                                placeholder="Email" value="{{ old('email', $user->email) }}" required autocomplete="email">
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -86,11 +89,9 @@
                             <label for="inputrole">Role</label>
                             <select name="role_id" class="form-control" id="inputrole">
                                 @foreach ($roles as $role)
-                                    <option value="{{ $role->id }}" 
-                                        @if ($role->title == 'Employee' ) 
-                                        selected 
-                                        @endif>
-                                            {{ $role->title }}</option>
+                                    <option value="{{ $role->id }}" @if ($role->id == $selectedRoleId) selected @endif>
+                                        {{ $role->title }}
+                                    </option>
                                 @endforeach
                             </select>
                         </div>
